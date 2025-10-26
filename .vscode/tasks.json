@@ -1,0 +1,84 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "options": {
+      "env": {
+        "POSTGRES_PASSWORD": "6MHyGKj6jK",
+        "RABBITMQ_PASSWORD": "08_AQ6Lq",
+        "MINIO_PASSWORD": "P_lq47NB"
+      }
+    },
+    "tasks": [
+        {
+            "label": "0:🐋👍 CONTAINER :: UP",
+            "type": "shell",
+            "command": "docker compose --progress=plain up -d --wait"
+        },
+        {
+            "label": "1:🐋👍 CONTAINER :: UP FULL",
+            "type": "shell",
+            "command": "docker compose --profile full up -d"
+        },
+        {
+            "label": "2:🐋👍 CONTAINER :: FULL UP WITH BUILD",
+            "type": "shell",
+            "command": "docker compose --profile full up -d --build"
+        },
+        {
+            "label": "3:🐋👍 CONTAINER :: UNIT TESTS",
+            "type": "shell",
+            "command": "docker compose --profile tests up tests -d --build"
+        },
+        {
+            "label": "4:🐋👎 CONTAINER :: DOWN",
+            "type": "shell",
+            "command": "docker compose --profile full down"
+        },
+        {
+            "label": "5:🔄 LIQUIBASE :: UPDATE RU",
+            "type": "shell",
+            "command": "docker compose run --rm liquibase update --context-filter=ru"
+        },
+        {
+            "label": "6:🔄 LIQUIBASE :: UPDATE EN",
+            "type": "shell",
+            "command": "docker compose run --rm liquibase update --context-filter=en"
+        },
+        {
+            "label": "c:⚠️ DATABASE & MINIO :: DOWN WITH VOLUMES",
+            "type": "shell",
+            "command": "docker compose down -v db -v minio"
+        },
+        {
+            "label": "d:⚠️🚀 RECREATE DATABSE",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "c:⚠️ DATABASE & MINIO :: DOWN WITH VOLUMES",
+                "0:🐋👍 CONTAINER :: UP",
+                "5:🔄 LIQUIBASE :: UPDATE RU"
+            ]
+        },
+        {
+            "label": "e:⚠️ ALL :: DOWN WITH VOLUMES",
+            "type": "shell",
+            "command": "docker compose down -v"
+        },
+        {
+            "label": "f:🐋👍 CONTAINER FOR FRONTEND DEV :: FULL UP WITH BUILD",
+            "type": "shell",
+            "command": "docker compose -f compose.yaml -f compose.override.frontend.dev.yml --profile full  up -d --build --wait"
+        },
+        {
+            "label": "g:🚀👍 CONTAINER FOR FRONTEND DEV",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "c:⚠️ DATABASE & MINIO :: DOWN WITH VOLUMES",
+                "f:🐋👍 CONTAINER FOR FRONTEND DEV :: FULL UP WITH BUILD",
+                "5:🔄 LIQUIBASE :: UPDATE RU"
+            ]
+        },
+    ]
+}

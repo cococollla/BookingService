@@ -1,0 +1,4 @@
+FROM liquibase:4.33
+
+COPY ./db/changelog /liquibase/changelog
+COPY ./db/changelog/liquibase.properties /liquibase/liquibase.docker.properties

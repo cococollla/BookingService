@@ -1,0 +1,74 @@
+name: booking-backend
+services:
+    root.api:
+      image: root.api
+      profiles: [full]
+      build:
+        context: .
+        dockerfile: Root.api/Dockerfile
+      environment:
+        TZ: Europe/Moscow
+      ports:
+        - 5102:8080
+      networks:
+        - booking
+
+    db:
+      image: postgres:17-alpine
+      volumes:
+        - postgres-data:/var/lib/postgresql/data
+      environment:
+        TZ: Europe/Moscow
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+        POSTGRES_DB: booking
+        POSTGRES_INITDB_ARGS: "--locale-provider=icu --icu-locale=ru-RU"
+      healthcheck:
+        test: ["CMD-SHELL", "pg_isready -U postgres"]
+        interval: 5s
+        timeout: 5s
+        retries: 5
+      ports:
+        - 5434:5432
+      networks:
+        - booking
+
+    liquibase:
+      image: liquibase:latest
+      profiles: [liquibase] # таким образом не запускаем вместе с контейрером бд.
+      environment:
+        - TZ=Europe/Moscow
+        - LIQUIBASE_COMMAND_URL=jdbc:postgresql://db:5432/booking
+        - LIQUIBASE_COMMAND_USERNAME=postgres
+        - LIQUIBASE_COMMAND_PASSWORD=${POSTGRES_PASSWORD}
+      volumes: 
+        - ./db/changelog:/liquibase/changelog
+        - ./db/changelog/liquibase.properties:/liquibase/liquibase.docker.properties
+      networks:
+        - booking
+
+    tests:
+      profiles: [tests]
+      build:
+        context: .
+        dockerfile: Dockerfile.unit.tests
+
+    seq:
+      image: datalust/seq
+      volumes:
+        - seq-data:/data
+      ports:
+        - 8089:80
+        - 5342:5341
+      environment:
+        - TZ=Europe/Moscow
+        - ACCEPT_EULA=Y
+      networks:
+        - booking
+
+volumes:
+  seq-data:
+  postgres-data:
+
+networks:
+  booking:

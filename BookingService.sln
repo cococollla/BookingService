@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Root.api", "Root.api\Root.api.csproj", "{B2898A68-FABA-4999-B2C5-40E07850393F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_docker", "_docker", "{79CD494D-3390-40D3-BA4E-3508584FA186}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_common", "_common", "{C374DDEF-D7EB-451E-97AB-B4C6363E8228}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2898A68-FABA-4999-B2C5-40E07850393F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2898A68-FABA-4999-B2C5-40E07850393F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2898A68-FABA-4999-B2C5-40E07850393F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2898A68-FABA-4999-B2C5-40E07850393F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
