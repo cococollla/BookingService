@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using DotSwashbuckle.AspNetCore.SwaggerGen;
+﻿using DotSwashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.OpenApi.Models;
+
+namespace Common.Api.Swagger;
 
 /// <summary>
 /// Простой фильтр что бы добавлять 403 ответ
@@ -34,7 +32,7 @@ public sealed class ForbidHttpResultDocumentFilter : IDocumentFilter
             if (!returnType.IsGenericType ||
                 returnType.GetGenericTypeDefinition() != typeof(Task<>) ||
                 !returnType.GetGenericArguments()
-                    .Any(a => a.IsGenericType && _results.Any(r => r == a.GetGenericTypeDefinition())))
+                           .Any(a => a.IsGenericType && _results.Any(r => r == a.GetGenericTypeDefinition())))
                 continue;
 
             var results = returnType.GetGenericArguments().First();

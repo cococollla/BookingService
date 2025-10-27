@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/Users/nikolajbelaev/RiderProjects/BookingService/Root.api/Root.api.csproj": {}
+    "D:\\study projects\\BookingService\\Root.api\\Root.api.csproj": {}
   },
   "projects": {
-    "/Users/nikolajbelaev/RiderProjects/BookingService/Root.api/Root.api.csproj": {
+    "D:\\study projects\\BookingService\\Common.Api\\Common.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nikolajbelaev/RiderProjects/BookingService/Root.api/Root.api.csproj",
-        "projectName": "Root.api",
-        "projectPath": "/Users/nikolajbelaev/RiderProjects/BookingService/Root.api/Root.api.csproj",
-        "packagesPath": "/Users/nikolajbelaev/.nuget/packages/",
-        "outputPath": "/Users/nikolajbelaev/RiderProjects/BookingService/Root.api/obj/",
+        "projectUniqueName": "D:\\study projects\\BookingService\\Common.Api\\Common.Api.csproj",
+        "projectName": "Common.Api",
+        "projectPath": "D:\\study projects\\BookingService\\Common.Api\\Common.Api.csproj",
+        "packagesPath": "C:\\Users\\nsbel\\.nuget\\packages\\",
+        "outputPath": "D:\\study projects\\BookingService\\Common.Api\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/nikolajbelaev/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\nsbel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -37,16 +44,125 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "DotSwashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[3.0.11, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\study projects\\BookingService\\Root.api\\Root.api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\study projects\\BookingService\\Root.api\\Root.api.csproj",
+        "projectName": "Root.api",
+        "projectPath": "D:\\study projects\\BookingService\\Root.api\\Root.api.csproj",
+        "packagesPath": "C:\\Users\\nsbel\\.nuget\\packages\\",
+        "outputPath": "D:\\study projects\\BookingService\\Root.api\\obj\\",
+        "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\nsbel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "D:\\study projects\\BookingService\\Common.Api\\Common.Api.csproj": {
+                "projectPath": "D:\\study projects\\BookingService\\Common.Api\\Common.Api.csproj"
+              },
+              "D:\\study projects\\BookingService\\Root.dal\\Root.dal.csproj": {
+                "projectPath": "D:\\study projects\\BookingService\\Root.dal\\Root.dal.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "DotSwashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[3.0.11, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Scalar.AspNetCore": {
+              "target": "Package",
+              "version": "[2.9.0, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Serilog.AspNetCore.Enrichers.CorrelationId": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Serilog.Sinks.Seq": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "linq2db.AspNet": {
+              "target": "Package",
+              "version": "[5.4.1, )"
+            },
+            "linq2db.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.4.1, )"
             }
           },
           "imports": [
@@ -68,7 +184,78 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\study projects\\BookingService\\Root.dal\\Root.dal.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\study projects\\BookingService\\Root.dal\\Root.dal.csproj",
+        "projectName": "Root.dal",
+        "projectPath": "D:\\study projects\\BookingService\\Root.dal\\Root.dal.csproj",
+        "packagesPath": "C:\\Users\\nsbel\\.nuget\\packages\\",
+        "outputPath": "D:\\study projects\\BookingService\\Root.dal\\obj\\",
+        "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\nsbel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "linq2db": {
+              "target": "Package",
+              "version": "[5.4.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

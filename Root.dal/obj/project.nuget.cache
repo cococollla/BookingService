@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "3xnEuTjggY8=",
+  "dgSpecHash": "LemJ68Xa+D8=",
   "success": true,
   "projectFilePath": "D:\\study projects\\BookingService\\Root.dal\\Root.dal.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\nsbel\\.nuget\\packages\\linq2db\\5.4.1\\linq2db.5.4.1.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,7 +1,7 @@
 using DotSwashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.OpenApi.Models;
 
-namespace Common.Api.Results;
+namespace Common.Api.Swagger;
 
 /// <summary>
 /// Оборачивает описание ответов в стандартное описание кодов.

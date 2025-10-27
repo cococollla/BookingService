@@ -1,13 +1,10 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.IO;
 using System.Reflection;
 using System.Xml.XPath;
 using DotSwashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.OpenApi.Models;
 
-namespace Common.Api.Results;
+namespace Common.Api.Swagger;
 
 /// <summary>
 /// Фильтр для добавления описания параметров с аттрибутом <see cref="CustomValidationAttribute"/> из XML документации.

@@ -50,9 +50,13 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
-            "DotSwashbuckle.AspNetCore.SwaggerGen": {
+            "DotSwashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[3.0.11, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.10, )"
             }
           },
           "imports": [

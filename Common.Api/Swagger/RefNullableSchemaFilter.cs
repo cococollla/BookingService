@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using DotSwashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.OpenApi.Models;
 
-namespace Common.Api.Results;
+namespace Common.Api.Swagger;
 
 /// <summary>
 /// Расширение для swagger.

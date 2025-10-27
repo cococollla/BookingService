@@ -1,0 +1,13 @@
+D:\study projects\BookingService\Root.dal\bin\Debug\net9.0\Root.dal.deps.json
+D:\study projects\BookingService\Root.dal\bin\Debug\net9.0\Root.dal.dll
+D:\study projects\BookingService\Root.dal\bin\Debug\net9.0\Root.dal.pdb
+D:\study projects\BookingService\Root.dal\obj\Debug\net9.0\Root.dal.csproj.AssemblyReference.cache
+D:\study projects\BookingService\Root.dal\obj\Debug\net9.0\Root.dal.GeneratedMSBuildEditorConfig.editorconfig
+D:\study projects\BookingService\Root.dal\obj\Debug\net9.0\Root.dal.AssemblyInfoInputs.cache
+D:\study projects\BookingService\Root.dal\obj\Debug\net9.0\Root.dal.AssemblyInfo.cs
+D:\study projects\BookingService\Root.dal\obj\Debug\net9.0\Root.dal.csproj.CoreCompileInputs.cache
+D:\study projects\BookingService\Root.dal\obj\Debug\net9.0\Root.dal.sourcelink.json
+D:\study projects\BookingService\Root.dal\obj\Debug\net9.0\Root.dal.dll
+D:\study projects\BookingService\Root.dal\obj\Debug\net9.0\refint\Root.dal.dll
+D:\study projects\BookingService\Root.dal\obj\Debug\net9.0\Root.dal.pdb
+D:\study projects\BookingService\Root.dal\obj\Debug\net9.0\ref\Root.dal.dll

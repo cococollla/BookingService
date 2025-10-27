@@ -54,7 +54,6 @@ public static class Extentions
         options.CustomSchemaIds(type => type
             .FullName!
             .Replace("+", ".")
-            // .Replace($"{type.Namespace}.", string.Empty)
         );
     }
 }

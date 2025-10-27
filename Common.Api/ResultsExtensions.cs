@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Common.Api.Results;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 
-namespace Common.Api.Results;
+namespace Common.Api;
 
 // ReSharper disable InconsistentNaming - намеренно с маленькой буквы, не пересекается с методами контроллера и короткое название
 /// <summary>

@@ -9,6 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_docker", "_docker", "{79CD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_common", "_common", "{C374DDEF-D7EB-451E-97AB-B4C6363E8228}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Root.dal", "Root.dal\Root.dal.csproj", "{0124BC19-00DE-45C6-86B0-F42B95FDF74A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Api", "Common.Api\Common.Api.csproj", "{3D8C3AF6-C8F0-4AEA-8298-2705FD8968F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,5 +23,16 @@ Global
 		{B2898A68-FABA-4999-B2C5-40E07850393F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2898A68-FABA-4999-B2C5-40E07850393F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2898A68-FABA-4999-B2C5-40E07850393F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0124BC19-00DE-45C6-86B0-F42B95FDF74A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0124BC19-00DE-45C6-86B0-F42B95FDF74A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0124BC19-00DE-45C6-86B0-F42B95FDF74A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0124BC19-00DE-45C6-86B0-F42B95FDF74A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D8C3AF6-C8F0-4AEA-8298-2705FD8968F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D8C3AF6-C8F0-4AEA-8298-2705FD8968F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D8C3AF6-C8F0-4AEA-8298-2705FD8968F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D8C3AF6-C8F0-4AEA-8298-2705FD8968F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3D8C3AF6-C8F0-4AEA-8298-2705FD8968F1} = {C374DDEF-D7EB-451E-97AB-B4C6363E8228}
 	EndGlobalSection
 EndGlobal

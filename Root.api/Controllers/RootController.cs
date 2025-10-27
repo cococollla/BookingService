@@ -1,13 +1,12 @@
 using Common.Api.Results;
 using LinqToDB;
-using Localization.shared;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Root.dal;
-using static Common.Api.Results.ResultsExtensions;
+using static Common.Api.ResultsExtensions;
 
-namespace Root.api.Controllers;
+namespace BookingService.Controllers;
 
 /// <summary>
 /// Приложение
@@ -15,23 +14,8 @@ namespace Root.api.Controllers;
 [ApiController]
 [Route("api/")]
 [Tags("root")]
-public class RootController : ControllerBase
+public class RootController(ILogger<RootController> logger, IHostEnvironment env) : ControllerBase
 {
-    private readonly ILogger<RootController> _logger;
-    private readonly IHostEnvironment _env;
-    private readonly ILocalizer _localizer;
-
-
-    /// <summary>
-    /// Конструктор
-    /// </summary>
-    public RootController(ILogger<RootController> logger, IHostEnvironment env, ILocalizer localizer)
-    {
-        _logger = logger;
-        _env = env;
-        _localizer = localizer;
-    }
-
     /// <summary>
     /// Получить версию приложения
     /// </summary>
@@ -47,7 +31,7 @@ public class RootController : ControllerBase
     [HttpGet("db/changelog")]
     public async Task<Results<Ok<DatabaseChangeLog[]>, TNotFound>> DbChangelog([FromServices] Rootdb rootdb, CancellationToken cancellationToken)
     {
-        if (!_env.IsDevelopment() && !_env.IsEnvironment("DevelopmentContainer"))
+        if (!env.IsDevelopment() && !env.IsEnvironment("DevelopmentContainer"))
             return notFound("Environment is not development");
 
         return ok(await rootdb.DatabaseChangeLogs
@@ -61,30 +45,6 @@ public class RootController : ControllerBase
     [HttpGet("health")]
     public Ok<HealthStatus> Health()
     {
-        // TODO: потенциально более сложная проверка
         return ok(HealthStatus.Healthy);
-    }
-    
-    /// <summary>
-    /// Локализация 
-    /// </summary>
-    [HttpGet("localization")]
-    public Ok<LocalizationResponse> Localization()
-    {
-        return ok(new LocalizationResponse
-        {
-            Language = _localizer.GetLanguage()
-        });
-    }
-
-    /// <summary>
-    /// Локализация
-    /// </summary>
-    public sealed record LocalizationResponse
-    {
-        /// <summary>
-        /// Язык
-        /// </summary>
-        public required Language Language { get; init; }
     }
 }

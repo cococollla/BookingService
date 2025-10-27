@@ -1,8 +1,8 @@
-using System.Collections.Generic;
+using Common.Api.Results;
 using DotSwashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.OpenApi.Models;
 
-namespace Common.Api.Results.Swagger;
+namespace Common.Api.Swagger;
 
 /// <summary>
 /// Добавляет 400 ко всем endpoints.

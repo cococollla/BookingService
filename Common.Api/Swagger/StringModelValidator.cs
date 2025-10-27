@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Common.Api.Results.Swagger;
+namespace Common.Api.Swagger;
 
 /// <summary>
 /// Валидатор для строк
