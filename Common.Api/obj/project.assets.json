@@ -1,0 +1,182 @@
+{
+  "version": 3,
+  "targets": {
+    "net9.0": {
+      "DotSwashbuckle.AspNetCore.Swagger/3.0.11": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.OpenApi": "1.6.22"
+        },
+        "compile": {
+          "lib/net8.0/DotSwashbuckle.AspNetCore.Swagger.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/DotSwashbuckle.AspNetCore.Swagger.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "DotSwashbuckle.AspNetCore.SwaggerGen/3.0.11": {
+        "type": "package",
+        "dependencies": {
+          "DotSwashbuckle.AspNetCore.Swagger": "3.0.11"
+        },
+        "compile": {
+          "lib/net8.0/DotSwashbuckle.AspNetCore.SwaggerGen.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/DotSwashbuckle.AspNetCore.SwaggerGen.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.OpenApi/1.6.22": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DotSwashbuckle.AspNetCore.Swagger/3.0.11": {
+      "sha512": "cpuronjtsIhAA4vQrzciJ3pufmYqlReHR6P3Xx57R6wpKaYl+rl3b5CNjMcog762Gv8G0wBTKBjoK/hJoGt9ug==",
+      "type": "package",
+      "path": "dotswashbuckle.aspnetcore.swagger/3.0.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dotswashbuckle.aspnetcore.swagger.3.0.11.nupkg.sha512",
+        "dotswashbuckle.aspnetcore.swagger.nuspec",
+        "icon.png",
+        "lib/net8.0/DotSwashbuckle.AspNetCore.Swagger.dll",
+        "lib/net8.0/DotSwashbuckle.AspNetCore.Swagger.pdb",
+        "lib/net8.0/DotSwashbuckle.AspNetCore.Swagger.xml"
+      ]
+    },
+    "DotSwashbuckle.AspNetCore.SwaggerGen/3.0.11": {
+      "sha512": "TWMYYHW1Otz8ioOV/2oEH0NcZFqVoM40UYq58S3FOEpyQtKdWFm+N6qrPxFqGWo+D+H0jrUiWJ4hpFM+GqDjzA==",
+      "type": "package",
+      "path": "dotswashbuckle.aspnetcore.swaggergen/3.0.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dotswashbuckle.aspnetcore.swaggergen.3.0.11.nupkg.sha512",
+        "dotswashbuckle.aspnetcore.swaggergen.nuspec",
+        "icon.png",
+        "lib/net8.0/DotSwashbuckle.AspNetCore.SwaggerGen.dll",
+        "lib/net8.0/DotSwashbuckle.AspNetCore.SwaggerGen.pdb",
+        "lib/net8.0/DotSwashbuckle.AspNetCore.SwaggerGen.xml"
+      ]
+    },
+    "Microsoft.OpenApi/1.6.22": {
+      "sha512": "aBvunmrdu/x+4CaA/UP1Jx4xWGwk4kymhoIRnn2Vp+zi5/KOPQJ9EkSXHRUr01WcGKtYl3Au7XfkPJbU1G2sjQ==",
+      "type": "package",
+      "path": "microsoft.openapi/1.6.22",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/netstandard2.0/Microsoft.OpenApi.dll",
+        "lib/netstandard2.0/Microsoft.OpenApi.pdb",
+        "lib/netstandard2.0/Microsoft.OpenApi.xml",
+        "microsoft.openapi.1.6.22.nupkg.sha512",
+        "microsoft.openapi.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net9.0": [
+      "DotSwashbuckle.AspNetCore.SwaggerGen >= 3.0.11"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\nsbel\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\study projects\\BookingService\\Common.Api\\Common.Api.csproj",
+      "projectName": "Common.Api",
+      "projectPath": "D:\\study projects\\BookingService\\Common.Api\\Common.Api.csproj",
+      "packagesPath": "C:\\Users\\nsbel\\.nuget\\packages\\",
+      "outputPath": "D:\\study projects\\BookingService\\Common.Api\\obj\\",
+      "projectStyle": "PackageReference",
+      "UsingMicrosoftNETSdk": false,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\nsbel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net9.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net9.0": {
+        "targetAlias": "net9.0",
+        "dependencies": {
+          "DotSwashbuckle.AspNetCore.SwaggerGen": {
+            "target": "Package",
+            "version": "[3.0.11, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
