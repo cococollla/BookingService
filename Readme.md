@@ -81,3 +81,76 @@ NewDomain.shared.impl  # Реализации общих компонент
 - **`.shared`** - Shared Kernel, Common abstractions
 - **`.job`** - Background Jobs, Workers
 - **`.bridge`** - Shared models
+## DDD-модуль бронирования площадок
+
+Добавлен базовый модуль бронирования в стиле DDD:
+- `Booking.domain` — доменные сущности и правила пересечения слотов.
+- `Booking.app` — application-сервисы и in-memory репозитории.
+- `Booking.bridge` — контракты API.
+
+### Новые эндпоинты
+- `GET /api/booking/fields` — список спортивных площадок.
+- `GET /api/booking/fields/{fieldId}/slots?date=2026-01-10` — свободные почасовые слоты (UTC).
+- `POST /api/booking/bookings` — создать бронирование.
+
+Пример тела запроса:
+```json
+{
+  "fieldId": "0d417b4a-c3c1-4ba3-a60d-9102d7b52f1a",
+  "startUtc": "2026-01-10T10:00:00Z",
+  "hours": 2,
+  "customerName": "Иван Петров"
+}
+```
+
+Если интервал уже занят, сервис вернет конфликт и предложит выбрать другое время.
+
+## Разбор доменной структуры (DDD)
+
+Ниже разбор текущей модели в модуле `Booking` с точки зрения DDD.
+
+### Value Object
+
+- `TimeRange` (`Booking.domain/TimeRange.cs`) — **Value Object**.
+  - Не имеет собственной идентичности.
+  - Определяется только значениями `StartUtc` и `EndUtc`.
+  - Инкапсулирует инварианты диапазона времени (UTC и `End > Start`) и поведение `Overlaps`.
+
+### Entity
+
+- `SportsField` (`Booking.domain/SportsField.cs`) — **Entity**.
+  - Имеет устойчивую идентичность `Id`.
+  - Содержит бизнес-правила поля (например, допустимая длительность `SupportsDuration`).
+
+- `FieldBooking` (`Booking.domain/FieldBooking.cs`) — **Entity**.
+  - Имеет идентичность `Id`.
+  - Привязана к полю через `FieldId`.
+  - Включает `TimeRange` как value object и умеет проверять конфликт `ConflictsWith`.
+
+### Aggregate и Aggregate Root
+
+В текущей реализации естественный кандидат на агрегат:
+
+- **Aggregate Root: `SportsField`**
+- **Внутри агрегата: бронирования этого поля (`FieldBooking`)**
+
+Идея инварианта агрегата: для одного поля не должно быть пересекающихся броней по времени.
+
+Сейчас проверка этого инварианта вынесена в `BookingDomainService.HasConflicts(...)`, а сами брони хранятся отдельно в репозитории. Это рабочий подход для прототипа, но в «чистом» DDD обычно:
+
+1. операции создания брони идут через aggregate root,
+2. корень агрегата отвечает за целостность набора броней,
+3. репозиторий сохраняет/восстанавливает агрегат как единицу согласованности.
+
+### Domain Service
+
+- `BookingDomainService` — **Domain Service**,
+  - потому что логика проверки конфликтов относится к предметной области,
+  - но неестественно принадлежит одной конкретной сущности в текущем виде.
+
+Итого по классификации:
+
+- **Value Object:** `TimeRange`
+- **Entities:** `SportsField`, `FieldBooking`
+- **Aggregate Root (рекомендуемая модель):** `SportsField`
+- **Domain Service:** `BookingDomainService`

@@ -49,6 +49,9 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Booking.app\Booking.app.csproj" />
+      <ProjectReference Include="..\Booking.bridge\Booking.bridge.csproj" />
+      <ProjectReference Include="..\Booking.domain\Booking.domain.csproj" />
       <ProjectReference Include="..\Common.Api\Common.Api.csproj" />
       <ProjectReference Include="..\Root.dal\Root.dal.csproj" />
     </ItemGroup>
