@@ -1,3 +1,4 @@
+using Booking.app;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Common.Api;
@@ -15,6 +16,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // 📡 Add services to the container.
 builder.Services.AddControllers();
+builder.Services.AddBookingModule();
 
 var dbConnectionString = builder.Configuration.GetConnectionString("Default") ?? string.Empty;
 
