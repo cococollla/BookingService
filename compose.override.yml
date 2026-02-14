@@ -1,0 +1,6 @@
+# Некоторые переопределения для среды разработки.
+services:
+  root.api:
+    environment:
+      ASPNETCORE_ENVIRONMENT: "DevelopmentContainer"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
